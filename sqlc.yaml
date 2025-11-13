@@ -1,0 +1,12 @@
+version: "2"
+sql:
+  - schema: "./db/migration"     # Path to your schema or migrations folder
+    queries: "./db/query"        # Path to your SQL query files
+    engine: "postgresql"       # Database type
+    gen:
+      go:
+        package: "db"          # Go package name for generated code
+        out: "./db/sqlc"         # Folder for generated Go code
+        emit_json_tags: true
+        emit_prepared_queries: false
+        emit_interface: false
